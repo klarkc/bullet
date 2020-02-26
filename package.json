@@ -1,0 +1,9 @@
+{
+  "name": "bullet",
+  "version": "1.0.0",
+  "description": "Mr. Buffett Wallet",
+  "main": "index.js",
+  "repository": "git@github.com:klarkc/bullet.git",
+  "author": "Walker Gusmão <walker@praiseweb.com.br>",
+  "license": "MIT"
+}
