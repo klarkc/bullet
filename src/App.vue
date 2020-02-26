@@ -1,17 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <bl-node>
+      <bl-node :fill=".2">
+        Renda Fixa
+      </bl-node>
+      <bl-node :fill=".5">
+        Renda Variável
+      </bl-node>
+      <bl-node :fill=".3">
+        Fundos
+      </bl-node>
+    </bl-node>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import BlNode from './components/BlNode.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    BlNode,
   },
 };
 </script>
