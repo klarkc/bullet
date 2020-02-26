@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "git@github.com:klarkc/bullet.git",
   "author": "Walker Gusmão <walker@praiseweb.com.br>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@vue/cli": "^4.2.2"
+  }
 }
