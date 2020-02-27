@@ -1,26 +1,38 @@
 <template>
   <div id="app">
-    <bl-node>
-      <bl-node :fill=".2">
-        Renda Fixa
-      </bl-node>
-      <bl-node :fill=".5">
-        Renda Variável
-      </bl-node>
-      <bl-node :fill=".3">
-        Fundos
-      </bl-node>
-    </bl-node>
+    <bl-tree v-bind="tree.bindings">
+      <bl-tree-node
+        #default="node"
+        v-bind="node.bindings"
+        v-on="node.listeners"
+      />
+    </bl-tree>
   </div>
 </template>
 
 <script>
-import BlNode from './components/BlNode.vue';
+import {
+  useState as useTreeState,
+  useBindings as useTreeBindings,
+  useComponents as useTreeComponents,
+} from './tree';
 
 export default {
   name: 'App',
   components: {
-    BlNode,
+    ...useTreeComponents(),
+  },
+  setup() {
+    const treeState = useTreeState([
+      { id: 1, open: true, children: [2, 3, 4] },
+    ]);
+    const treeBindings = useTreeBindings(treeState);
+
+    return {
+      tree: {
+        bindings: treeBindings,
+      },
+    };
   },
 };
 </script>
